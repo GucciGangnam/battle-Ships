@@ -1,5 +1,1 @@
-function sum(a, b) {
-  return a + b
-}
-
-export { sum };
+console.log('Hello 99999999!')
