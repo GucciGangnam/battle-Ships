@@ -1,20 +1,24 @@
 
-
-
-
 //imports  
-import placeShipScreen from './interface';
+
 import GameBoard from './gameBoard';
+import displayPlayerBoard from './interface';
 
 
-//build gameBoard
-
+//build player gameBoard
 const playergameBoard = new GameBoard();
 playergameBoard.createBoard();
+export default playergameBoard;
+
+// build Ai gameBoard 
+const AiGameBoard = new GameBoard();
+AiGameBoard.createBoard();
+export { AiGameBoard };
+
+displayPlayerBoard()
 
 
-// buold interface
-placeShipScreen(playergameBoard.availableShips[0]);
+
 
 
 

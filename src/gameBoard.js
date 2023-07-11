@@ -27,6 +27,7 @@ class GameBoard {
         this.availableShips.push(ship3);
         this.availableShips.push(ship4);
         this.availableShips.push(ship5);
+        this.placeShip(ship1, 0, 0);
     }
 
     testIfShipIsLegal(ship, x, y) {
