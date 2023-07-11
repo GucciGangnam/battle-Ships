@@ -7,6 +7,7 @@ class GameBoard {
         this.board = [];
         this.ships = [];
         this.misses = [];
+        this.hits = [];
         this.availableShips = [];
     }
 
@@ -28,6 +29,16 @@ class GameBoard {
         this.availableShips.push(ship4);
         this.availableShips.push(ship5);
         this.placeShip(ship1, 0, 0);
+        this.receiveAttack(9, 0);
+        this.placeShip(ship2, 1, 0);
+        this.receiveAttack(1, 0);
+        this.receiveAttack(1, 1);
+        this.receiveAttack(1, 2);
+        this.receiveAttack(1, 3);
+
+        console.log(this.board);
+        console.log(this.misses);
+        console.log(this.hits);
     }
 
     testIfShipIsLegal(ship, x, y) {
@@ -77,9 +88,16 @@ class GameBoard {
     receiveAttack(x, y) {
         if (this.board[x][y] === "empty") {
             this.misses.push([x, y]);
-            return "miss";
-        } else {
+            this.board[x][y] = "miss";
+            console.log('misses so far: ' + this.misses);
+            return "miss";}
+            else if (this.board[x][y] === "miss") {
+                return "miss";
+            }
+            else {
             this.board[x][y].hit();
+            this.hits.push([x, y]);
+            console.log('hits so far: ' + this.hits);
             if (this.board[x][y].sunk === true) {
                 return "sunk";
             } else {

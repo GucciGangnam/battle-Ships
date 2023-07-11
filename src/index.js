@@ -2,7 +2,8 @@
 //imports  
 
 import GameBoard from './gameBoard';
-import displayPlayerBoard from './interface';
+import displayPageSkeleton from './interface';
+
 
 
 //build player gameBoard
@@ -11,11 +12,12 @@ playergameBoard.createBoard();
 export default playergameBoard;
 
 // build Ai gameBoard 
-const AiGameBoard = new GameBoard();
-AiGameBoard.createBoard();
-export { AiGameBoard };
+// const AiGameBoard = new GameBoard();
+// AiGameBoard.createBoard();
+// export { AiGameBoard };
 
-displayPlayerBoard()
+displayPageSkeleton();
+// placeFirstShip();
 
 
 

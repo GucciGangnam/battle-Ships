@@ -1,3 +1,104 @@
 body { 
     background-color: brown;
+    display: flex;
+    flex-direction: column;
 }
+
+/* steps-header */
+
+.steps-header {
+    outline: 1px solid rgb(9, 195, 21);
+
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+
+    z-index: 1;
+
+}
+.rotate-button-div {
+    outline: 1px solid #3424c9;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    /* Rotate Button */
+    .rotate-button {
+        outline: 1px solid #3424c9;
+
+        height: 40px;
+        width: 60px;
+        
+        background-color: rgba(255, 255, 255, 0.123);
+    }
+
+/* game container */
+.game-container {
+    outline: 1px solid white;
+
+    height: calc(100vh - 100px);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+    /* Player Board */
+    .player-game-board{ 
+        outline: 1px solid #3424c9;
+
+        height: 50vh;
+        min-width: 250px;
+        min-height: 250px;
+        max-width: 50vw;
+        max-height: 50vw;
+        aspect-ratio: 1/1;
+
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        justify-content: center;
+        align-items: center;
+        
+        background-color: rgba(255, 255, 255, 0.123);
+    }
+        /* Player Board Squares */
+        .square { 
+            outline: 1px solid #3424c9;
+            background-color: #fff;
+            height: 100%;
+            width: 100%;
+        }
+            .square.ship {
+                background-color: #000;
+            }
+            .square.miss {
+                background-color: orange;
+            }
+
+    /* Computer Board */
+    .computer-game-board {
+        outline: 1px solid #3424c9;
+
+        aspect-ratio: 1/1;
+        height: 50vh;
+        min-width: 250px;
+        min-height: 250px;
+        max-width: 50vw;
+        max-height: 50vw;
+        
+
+        background-color: rgba(255, 255, 255, 0.123);
+    }
