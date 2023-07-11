@@ -2,11 +2,12 @@
 import Ship from './ship';
 
 
-class GameBoard { 
+class GameBoard {
     constructor() {
         this.board = [];
         this.ships = [];
         this.misses = [];
+        this.availableShips = [];
     }
 
     createBoard() {
@@ -16,9 +17,19 @@ class GameBoard {
                 this.board[i].push("empty");
             }
         }
+        const ship1 = new Ship(5);
+        const ship2 = new Ship(4);
+        const ship3 = new Ship(3);
+        const ship4 = new Ship(3);
+        const ship5 = new Ship(2);
+        this.availableShips.push(ship1);
+        this.availableShips.push(ship2);
+        this.availableShips.push(ship3);
+        this.availableShips.push(ship4);
+        this.availableShips.push(ship5);
     }
 
-    testIfShipIsLegal(ship, x, y) { 
+    testIfShipIsLegal(ship, x, y) {
         let response = 0;
         if (ship.direction === 'horizontal') {
             for (let i = 0; i < ship.length; i++) {
@@ -28,18 +39,16 @@ class GameBoard {
                     response -= 1;
                     return response;
                 }
-            } 
+            }
         } else {
             for (let i = 0; i < ship.length; i++) {
-
                 if (this.board[x + i] && this.board[x + i][y] == "empty") {
-
                     response += 0;
                 } else {
                     response -= 1;
                     return response;
                 }
-            } 
+            }
         }
         return response;
     }
@@ -56,6 +65,9 @@ class GameBoard {
                 }
             }
             this.ships.push(ship);
+            this.availableShips.shift();
+            console.log(this.availableShips);
+            console.log('ship placed successfully')
         } else {
             return "error: did not pass legal test";
         }
