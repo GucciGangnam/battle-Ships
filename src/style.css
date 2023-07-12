@@ -87,6 +87,9 @@ body {
             .square.miss {
                 background-color: orange;
             }
+            .square.hitship {
+                background-color: red;
+            }
 
     /* Computer Board */
     .computer-game-board {
