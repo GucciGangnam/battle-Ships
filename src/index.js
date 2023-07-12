@@ -2,25 +2,30 @@
 //imports  
 
 import GameBoard from './gameBoard';
-import displayPageSkeleton from './interface';
+import placeShips from './VIS-Place-Ships';
 
 
 
 //build player gameBoard
-const playergameBoard = new GameBoard();
-playergameBoard.createBoard();
-export default playergameBoard;
+const playerGameBoard = new GameBoard();
+playerGameBoard.createBoard();
+playerGameBoard.placeShip(playerGameBoard.availableShips[0], 0, 0);
+playerGameBoard.receiveAttack(1, 0);
+
+
+export default playerGameBoard;
 
 // build Ai gameBoard 
-// const AiGameBoard = new GameBoard();
-// AiGameBoard.createBoard();
-// export { AiGameBoard };
+const computerGameBoard = new GameBoard();
+computerGameBoard.createBoard();
+computerGameBoard.placeShip(computerGameBoard.availableShips[0], 9, 0);
+computerGameBoard.receiveAttack(8, 0);
 
-displayPageSkeleton();
-// placeFirstShip();
-
-
+export { computerGameBoard };
 
 
 
+
+// place ships screen 
+placeShips();
 

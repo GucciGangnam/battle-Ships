@@ -28,17 +28,7 @@ class GameBoard {
         this.availableShips.push(ship3);
         this.availableShips.push(ship4);
         this.availableShips.push(ship5);
-        // this.placeShip(ship1, 5, 4);
-        // this.receiveAttack(9, 0);
-        // this.placeShip(ship2, 1, 0);
-        // this.receiveAttack(1, 0);
-        // this.receiveAttack(1, 1);
-        // this.receiveAttack(1, 2);
 
-
-        // console.log(this.board);
-        // console.log(this.misses);
-        // console.log(this.hits);
     }
 
     testIfShipIsLegal(ship, x, y) {
@@ -89,7 +79,7 @@ class GameBoard {
         if (this.board[x][y] === "empty") {
             this.misses.push([x, y]);
             this.board[x][y] = "miss";
-            console.log('misses so far: ' + this.misses);
+            // console.log('misses so far: ' + this.misses);
             return "miss";}
             else if (this.board[x][y] === "miss") {
                 return "miss";
@@ -97,7 +87,7 @@ class GameBoard {
             else {
             this.board[x][y].hit();
             this.hits.push([x, y]);
-            console.log('hits so far: ' + this.hits);
+            // console.log('hits so far: ' + this.hits);
             if (this.board[x][y].sunk === true) {
                 return "sunk";
             } else {
