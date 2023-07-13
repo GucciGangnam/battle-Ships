@@ -42,7 +42,7 @@
 //             }
             
 //             if (playergameBoard.hits.some(arr => JSON.stringify(arr) === JSON.stringify([i, j]))) {
-//                 // console.log('a hit ship has been colored ')
+
 //                 let square = document.getElementById(`${i}${j}`);
 //                 square.classList.add('hitship');
 //             }

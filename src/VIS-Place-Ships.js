@@ -40,7 +40,7 @@ function placeShips() {
                 });
                 square.addEventListener('click', function() {
                     placeShip(square.id);
-                    console.log(square.id);
+
                 });
             }
         }
@@ -51,7 +51,7 @@ export default placeShips;
 
 
 function mouseOver(squareid) {
-    // console.log(squareid);
+
     let currentShip = playerGameBoard.availableShips[0];
     let x = parseInt(squareid[6]);
     let y = parseInt(squareid[7]);

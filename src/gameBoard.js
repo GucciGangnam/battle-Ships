@@ -9,6 +9,7 @@ class GameBoard {
         this.misses = [];
         this.hits = [];
         this.availableShips = [];
+        this.guesses = [];
     }
 
     createBoard() {
@@ -68,7 +69,7 @@ class GameBoard {
             }
             this.ships.push(ship);
             this.availableShips.shift();
-            console.log(this.availableShips);
+
             console.log('ship placed successfully')
         } else {
             return "error: did not pass legal test";
@@ -79,7 +80,7 @@ class GameBoard {
         if (this.board[x][y] === "empty") {
             this.misses.push([x, y]);
             this.board[x][y] = "miss";
-            // console.log('misses so far: ' + this.misses);
+
             return "miss";}
             else if (this.board[x][y] === "miss") {
                 return "miss";
@@ -87,7 +88,7 @@ class GameBoard {
             else {
             this.board[x][y].hit();
             this.hits.push([x, y]);
-            // console.log('hits so far: ' + this.hits);
+
             if (this.board[x][y].sunk === true) {
                 return "sunk";
             } else {

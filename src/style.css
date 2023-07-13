@@ -81,6 +81,9 @@ body {
             height: 100%;
             width: 100%;
         }
+            .square:hover {
+                background-color: #cccccc;
+            }
             .square.ship {
                 background-color: #000;
             }
