@@ -29,8 +29,18 @@ class GameBoard {
         this.availableShips.push(ship3);
         this.availableShips.push(ship4);
         this.availableShips.push(ship5);
-
     }
+
+    //maybe
+    resetBoard() {
+        this.board = [];
+        this.ships = [];
+        this.misses = [];
+        this.hits = [];
+        this.availableShips = [];
+        this.guesses = [];
+    }
+    // maybe
 
     testIfShipIsLegal(ship, x, y) {
         let response = 0;

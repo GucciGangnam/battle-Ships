@@ -83,13 +83,13 @@ function mouseOut(squareid) {
         if (currentShip.direction == 'horizontal') { 
             for (let i = 0; i < currentShip.length; i++) { 
                 let square = document.getElementById('player' + `${x}${y + i}`);
-                square.style.backgroundColor = 'white';
+                square.style.backgroundColor = '#5cc9fc';
             }
         }
         if (currentShip.direction == 'vertical') {
             for (let i = 0; i < currentShip.length; i++) { 
                 let square = document.getElementById('player' + `${x + i}${y}`);
-                square.style.backgroundColor = 'white';
+                square.style.backgroundColor = '#5cc9fc';
             }
         }
     } else { 

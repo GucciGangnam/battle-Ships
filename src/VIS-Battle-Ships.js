@@ -2,9 +2,10 @@
 import displayPlayerBoard from "./VIS-Display-boards";
 import { displayComputerBoard } from "./VIS-Display-boards";
 import displayPageSkeleton from "./VIS-displayPageSkeleton";
-import { computerGameBoard } from "./index";
-import placeShips from './VIS-Place-Ships';
+import { computerGameBoard, startGame } from "./index";
+
 import playerGameBoard from "./index";
+
 
 function battleShips() {
     const body = document.querySelector('body');
@@ -69,7 +70,7 @@ function addELForComputerBoardSquares() {
                         stepsHeader.textContent = 'You win!';
                         setTimeout(() => {
                             
-                            // display player win screen  /////
+                            startGame();
                         }, 1000);
                     } else { 
                         setTimeout(() => {
@@ -107,7 +108,7 @@ function AiAttack() {
         let stepsHeader = document.querySelector('.steps-header');
         stepsHeader.textContent = 'You lose!';
         setTimeout(() => {
-            // Display Player lose screen /////
+            startGame();
         }, 1000);
     } else { 
         addELForComputerBoardSquares();
