@@ -68,10 +68,14 @@ function addELForComputerBoardSquares() {
                     if (computerGameBoard.allShipsSunk() == true){ 
                         let stepsHeader = document.querySelector('.steps-header');
                         stepsHeader.textContent = 'You win!';
-                        setTimeout(() => {
-                            
-                            startGame();
-                        }, 1000);
+                        let rotateButtonDiv = document.querySelector('.rotate-button-div');
+                        const newGameBtn = document.createElement('button');
+                        newGameBtn.classList.add('rotate-button');
+                        newGameBtn.textContent = 'New Game';
+                        rotateButtonDiv.appendChild(newGameBtn);
+                        newGameBtn.addEventListener('click', () => {
+                        startGame();
+                        });
                     } else { 
                         setTimeout(() => {
                             AiAttack();
@@ -107,9 +111,16 @@ function AiAttack() {
     if (playerGameBoard.allShipsSunk() == true) {
         let stepsHeader = document.querySelector('.steps-header');
         stepsHeader.textContent = 'You lose!';
-        setTimeout(() => {
+        
+            let rotateButtonDiv = document.querySelector('.rotate-button-div');
+            const newGameBtn = document.createElement('button');
+            newGameBtn.classList.add('rotate-button');
+            newGameBtn.textContent = 'New Game';
+            rotateButtonDiv.appendChild(newGameBtn);
+            newGameBtn.addEventListener('click', () => {
             startGame();
-        }, 1000);
+            });
+        
     } else { 
         addELForComputerBoardSquares();
     }
